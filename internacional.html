@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Internacional</title>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+        <script src="_script/dbfake.js"></script>
+    </head>
+    <body>
+        <div id="interface">
+             <div class="container">
+<!-- ================================= Cabeçalho ===================================== -->
+             <div class="row">
+                    <div class="col">
+                        <div class="mainmenu">
+                 <header class="cabecalho">
+                    <a href="index.html"><img class="fundocabecalho" src="_imagens/logomarca.png"/></a>
+                 </header>
+                        </div>
+                    </div>
+             </div>
+<!- ==================================== Menu ==================================== ->
+                <div class="row">
+                    <div class="col">
+                        <div class="mainmenu">
+                            <input type="checkbox" id="bt_menu"/>
+                            <label for="bt_menu">&#9776;</label>
+                                <nav class="menu">
+                                    <ul>
+                                        <li><a href="index.html">Principal</a></li>
+                                        <li><a href="noticia_do_dia.html">Notícia do dia</a></li>
+                                        <li><a href="">Política</a>
+                                            <ul>
+                                                <li><a href="politica_brasil.html">Brasil</a></li>
+                                                <li><a href="politica_mundo.html">Mundo</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Futebol</a>
+                                            <ul>    
+                                                <li><a href="futebol_brasileiro.html">Campeonato Brasileiro</a></li>
+                                                <li><a href="futebol_internacional.html">Liga Européia</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="internacional.html">Internacional</a></li>
+                                    </ul>
+                                </nav>
+                        </div>
+                    </div>
+                </div>
+<!- =================================== Título e formulário ============================ ->
+                <div class="row">
+                    <div class="col col-setenta">
+                        <h5>Atualizado em 06/05/2019</h5>
+                    </div>
+                    <div class="col col-trinta">
+                        <form class="pesquisa" action="" method="post">
+                            <input type="search" name="busca" placeholder="Pesquisar..." required="">
+                            <input type="submit" name="enviar" value="Ir" class="btn">
+                        </form>
+                    </div>
+                </div>
+<!- ================================= Parte principal ================================== ->
+                <div class="row">
+                    <div class="col">
+                        <div id="pagnoticia">
+                            
+                        </div>
+                    </div>
+                </div>
+<!- ============================================ Footer ================================== ->
+                 <footer id="rodape">
+                    <ul>
+                        <li class="item"><a href="">Previsão do tempo</a></li>
+                        <li class="item"><a href="">Sobre nós</a></li>
+                        <li class="item"><a href="">Fale conosco</a></li>
+                    </ul>
+                    <p>&copy; Copyright 2019 - by Dayane Cordeiro<br/>News and Facts</p>
+            </footer>
+            <script>
+                var nots = '';
+                for(i=2; i< 3; i++){
+                    nots += `<h1>${ db.dados[2].titulo }</h1><h3>${ db.dados[2].subtitulo }</h3> <br> <img src="${ db.dados[2].imagem }"> <p>${ db.dados[2].noticia }</p> `;
+                }
+                document.getElementById('pagnoticia').innerHTML = nots;
+            </script>
+            </div>
+        </div>
+    </body>
+</html>
